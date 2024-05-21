@@ -19,7 +19,7 @@ public class Contador {
    
     try {
         if (ocorrencias <= 0)
-        throw new ParametrosInvalidosException("O segundo parametro precisa ser maior do que o primeiro parametro.");
+        throw new ParametrosInvalidosException("Atenção: o segundo parametro precisa ser maior do que o primeiro parametro.");
 
         System.out.println("Parametros registrados corretamente.");
         int numeroImpressao = 1;
@@ -33,7 +33,6 @@ public class Contador {
         }
    
    catch(ParametrosInvalidosException e) {
-       System.out.println("Atenção, o segundo parametro precisa ser maior que o primeiro!");
        System.out.println(e.getMessage());
         }
 
