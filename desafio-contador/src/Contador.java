@@ -8,37 +8,38 @@ public class Contador {
     int primeiroParametro;
     int segundoParametro;
 
-    System.out.println("Digite o primeiro parâmetro (número inteiro)");
-    primeiroParametro = scanner.nextInt();
-    
-    
-    System.out.println("Digite o segundo parâmetro (número inteiro). Atenção, este precisa ser maior que o primeiro!");
-    segundoParametro = scanner.nextInt();
-    
-    int ocorrencias = segundoParametro - primeiroParametro;
-   
-    try {
-        if (ocorrencias <= 0)
-        throw new ParametrosInvalidosException("Atenção: o segundo parametro precisa ser maior do que o primeiro parametro.");
+    boolean validParametro = false;
 
-        System.out.println("Parametros registrados corretamente.");
-        int numeroImpressao = 1;
+    do {
+        System.out.println("Vamos começar? Por favor digite o primeiro parâmetro. Atenção: este deve ser um número inteiro!");
+        primeiroParametro = scanner.nextInt();
+    
+        System.out.println("Agora, por favor digite o segundo parâmetro. Atenção, este precisa ser um número inteiro e maior do que o primeiro!");
+        segundoParametro = scanner.nextInt();
+    
+        int ocorrencias = segundoParametro - primeiroParametro;
+   
+        try {
+            if (ocorrencias <= 0)
+            throw new ParametrosInvalidosException("Atenção: o segundo parametro precisa ser maior do que o primeiro parametro.");
+            
+            validParametro = true;
+            System.out.println("Parametros registrados corretamente.");
+            int numeroImpressao = 1;
         
-        while (ocorrencias > 0) {
-        System.out.println("Imprimindo o número " + numeroImpressao);
-        ocorrencias--;
-        numeroImpressao++;
-         }
+            while (ocorrencias > 0) {
+            System.out.println("Imprimindo o número " + numeroImpressao);
+            ocorrencias--;
+            numeroImpressao++;
+            }
    
-        }
-   
-   catch(ParametrosInvalidosException e) {
-       System.out.println(e.getMessage());
-        }
+            }
+            catch(ParametrosInvalidosException e) {
+                System.out.println(e.getMessage());
+             }
+    } while (validParametro == false);
 
-    
-
-    scanner.close();
+            scanner.close();
     }
 }
 
