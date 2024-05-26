@@ -12,13 +12,16 @@ public class Iphone implements AparelhoTelefonico, NavegadorInternet, Reprodutor
         System.out.println("Correio de Voz do Iphone.");
     }
     public void exibirPagina(String url) {
-        System.out.println("Abrindo página do Iphone " + url);
+        System.out.println("Abrindo página " + url + " no " + nomeNavegador() + ".");
     }
     public void adicionarNovaAba() {
         System.out.println("Add aba do Iphone");
     }
     public void atualizarPagina() {
         System.out.println("Atualizando página do Iphone.");
+    }
+    public String nomeNavegador() {
+        return "safari"; 
     }
     public void tocar() {
         System.out.println("Tocando música no Iphone.");
