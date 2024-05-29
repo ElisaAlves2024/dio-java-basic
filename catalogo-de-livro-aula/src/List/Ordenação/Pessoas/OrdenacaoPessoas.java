@@ -2,7 +2,6 @@ package List.Ordenação.Pessoas;
 
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 
@@ -20,7 +19,7 @@ public class OrdenacaoPessoas {
 
     public List<Pessoa> ordenarIdade() {
         List<Pessoa> pessoaPorIdade = new ArrayList<>(pessoaList);
-        Collections.sort(pessoaPorIdade, );
+        Collections.sort(pessoaPorIdade);
         return pessoaPorIdade;
     }
     
