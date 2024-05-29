@@ -1,4 +1,4 @@
-package Pesquisa.ExercicioCatalogoLivro;
+package List.Pesquisa.ExercicioCatalogoLivro;
 
 import java.util.ArrayList;
 import java.util.List;

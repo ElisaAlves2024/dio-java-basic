@@ -1,4 +1,4 @@
-package Pesquisa.ExercicioSomaNumeros;
+package List.Pesquisa.ExercicioSomaNumeros;
 
 public class NumeroInteiro {
     

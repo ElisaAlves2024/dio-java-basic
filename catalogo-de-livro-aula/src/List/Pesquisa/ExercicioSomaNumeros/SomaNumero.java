@@ -1,4 +1,4 @@
-package Pesquisa.ExercicioSomaNumeros;
+package List.Pesquisa.ExercicioSomaNumeros;
 
 import java.util.ArrayList;
 import java.util.List;
