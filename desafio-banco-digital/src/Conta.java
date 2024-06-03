@@ -15,19 +15,7 @@ public abstract class Conta {
         this.cliente = cliente;        
     }
 
-    public void sacar(double valor) {
-		saldo -= valor;
-	}
-
-	public void depositar(double valor) {
-		saldo += valor;
-	}
-
-	public void transferir(double valor, Conta contaDestino) {
-		this.sacar(valor);
-		contaDestino.depositar(valor);
-	}
-
+    
 	public int getAgencia() {
 		return agencia;
 	}
@@ -40,7 +28,27 @@ public abstract class Conta {
 		return saldo;
 	}
 
-	protected void imprimirInfosComuns() {
+    public void sacar(double valor) {
+		if (valor <= saldo) {
+            saldo -= valor;
+            System.out.println("Saque realizado com sucesso! [CONTA] Saldo atual: " + saldo);   
+        } else {
+            System.out.println("Saldo insuficiente. Operação cancelada [CONTA].");
+        }
+	}
+
+    public void depositar(double valor) {
+		saldo += valor;
+	}
+
+    //Esse método chama dos métodos 'sacar' e 'depositar', logo o comando de imprimir mensagem destes outros métodos precisa ser ajustado.
+	public void transferir(double valor, Conta contaDestino) {
+        this.sacar(valor);
+		contaDestino.depositar(valor);
+	}
+
+
+	protected void imprimirExtrato() {
 		System.out.println(String.format("Titular: %s", this.cliente.getNome()));
 		System.out.println(String.format("Agencia: %d", this.agencia));
 		System.out.println(String.format("Numero: %d", this.numeroConta));

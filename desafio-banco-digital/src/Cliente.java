@@ -1,16 +1,14 @@
-import java.time.LocalDate;
-
 public class Cliente {
     
 	private static int SEQUENCIAL = 1;
 
     private String nome;
     private int cpf;
-    private LocalDate dataNascimento;
+    private String dataNascimento;
     private int idCliente;
 
 
-    Cliente (String nome, int CPF, LocalDate dataNascimento, int idCliente) {
+    public Cliente (String nome, int cpf, String dataNascimento) {
         this.nome = nome;
         this.cpf = cpf;
         this.dataNascimento = dataNascimento;
@@ -25,7 +23,7 @@ public class Cliente {
         return cpf;
     }
 
-    public LocalDate getDataNasc() {
+    public String getDataNasc() {
         return dataNascimento;
     }
 

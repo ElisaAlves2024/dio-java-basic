@@ -9,16 +9,26 @@ public class ContaCorrente extends Conta {
         }
     }
 	
-
-	@Override
+    @Override
 	public void imprimirExtrato() {
-        super.imprimirInfosComuns();
-		System.out.println("=== Extrato Conta Corrente ===");
-		
+        System.out.println("=== Extrato Conta Corrente ===");
+        super.imprimirExtrato();
 	}
 
-
-	
+    @Override
+    public void sacar(double valor) {
+		if (valor <= (saldo+limiteChequeEspecial)) {
+            if (valor > saldo){
+                saldo -= valor;
+                System.out.println("Saque realizado utilizando o Cheque Especial");
+            } else {
+                saldo -= valor;
+                System.out.println("Saque realizado com sucesso! Saldo atual: " + saldo);
+            }   
+        } else {
+            System.out.println("Saldo insuficiente. Operação cancelada.");
+        }
+	}	
 }
 
     
